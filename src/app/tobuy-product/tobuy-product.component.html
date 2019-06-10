@@ -1,0 +1,14 @@
+<!-- Wyświetlanie zakupionych produktów -->
+<ng-container *ngIf="productsList.length > 0; else noProduct">
+  <p [ngStyle]="{color: getColor()}">Produkty do kupienia: {{productsList.length}}</p>
+    <ul>
+      <li appDate [date]="product.created" *ngFor="let product of productsList | sortName; let odd = odd" [ngClass]="{'odd-li': odd, 'last-li': productsList.length===1 }">
+        {{product.name | transformProduct: ','}}
+        <button type="button" class="btn btn-danger" (click)="remove(product)">Usuń</button>
+        <button type="button" class="btn btn-success" (click)="purchased(product)">Kupione</button>
+      </li>
+    </ul>
+  </ng-container>
+  <ng-template #noProduct>
+    <p>Brak produktów, zakupy skończone!</p>
+  </ng-template>
