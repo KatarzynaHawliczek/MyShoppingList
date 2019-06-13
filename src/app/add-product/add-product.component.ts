@@ -33,7 +33,7 @@ export class AddProductComponent implements OnInit {
 
   createProductList(): Array<Product> {
     const productsList = new Array<Product>();
-    const productsArr = <[string]>this.addForm.get('productName').value;
+    const productsArr = this.addForm.get('productName').value as [string];
     productsArr.forEach(productName => {
       const product = {name: productName, created: new Date().toLocaleString(), isPurchased: false};
       productsList.push(product);
@@ -42,7 +42,7 @@ export class AddProductComponent implements OnInit {
   }
 
   addField() {
-    const arr = <FormArray>this.addForm.get('productName');
+    const arr = this.addForm.get('productName') as FormArray;
     arr.push(new FormControl(null, Validators.required));
   }
 
