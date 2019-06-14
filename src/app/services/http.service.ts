@@ -49,12 +49,12 @@ export class HttpService {
     }
   }
 
-  // deleteProduct(product: Product) {
-  //  this.http
-  //  .delete('https://angulardb-2df3.restdb.io/rest/products/' + product._id, {
-  //    headers: this.apiKey
-  //  })
-  //  .subscribe(data => {console.log(data);
-  //  });
-  // }
+  deleteProduct(product: Product) {
+    this.http
+    .delete('https://angulardb-2df3.restdb.io/rest/products/' + product._id, {
+      headers: this.apiKey
+    })
+    .subscribe(data => {console.log(data);
+    });
+   }
 }

@@ -22,6 +22,7 @@ export class ProductsService {
 
   remove(product: Product) {
     const list = this.productsListObs.getValue().filter(e => e !== product);
+    this.httpService.deleteProduct(product);
     this.productsListObs.next(list);
   }
 

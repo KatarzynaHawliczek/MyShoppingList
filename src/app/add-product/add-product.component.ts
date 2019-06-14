@@ -1,7 +1,8 @@
 import { ProductsService } from './../services/products.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from '../model/product';
-import { FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormArray, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
+import { forEach } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-add-product',
@@ -13,7 +14,7 @@ export class AddProductComponent implements OnInit {
   addForm: FormGroup;
 
   constructor(private productsService: ProductsService) {
-   }
+  }
 
   ngOnInit() {
     this.addForm = this.initForm();

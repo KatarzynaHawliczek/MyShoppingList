@@ -3,10 +3,10 @@
   <form [formGroup]="addForm" (ngSubmit)="add()">
     <div formArrayName="productName">
       <div *ngFor="let product of addForm.get('productName')['controls']; let i = index">
-        <input type="text" [formControlName]="i">
+        {{i+1}}.<input type="text" [formControlName]="i" style="margin: 5px">
       </div>
     </div>
-    <button type="submit" [disabled]="addForm.invalid">Dodaj produkty</button>
+    <button type="submit" [disabled]="addForm.invalid">Dodaj</button>
     <button type="button" (click)="addField()">Dodaj więcej produktów</button>
   </form>
 </div>
