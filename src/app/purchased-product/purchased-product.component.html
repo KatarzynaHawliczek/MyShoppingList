@@ -2,7 +2,7 @@
 <div class="container">
   <p>Kupione produkty: {{productsPurchased.length}}</p>
   <ul>
-    <li appChecked appDate [date]="product.end" *ngFor="let product of productsPurchased">
+    <li appChecked appDate [date]="product.purchased" *ngFor="let product of productsPurchased">
       {{product.name | transformProduct: ' - kupione!' }}
     </li>
   </ul>

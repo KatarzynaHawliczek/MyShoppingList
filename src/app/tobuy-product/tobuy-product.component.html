@@ -4,7 +4,7 @@
   <ng-container *ngIf="productsList.length > 0; else noProduct">
     <p [ngStyle]="{color: getColor()}">Produkty do kupienia: {{productsList.length}}</p>
     <ul>
-      <li appDate [date]="product.created" *ngFor="let product of productsList; let odd = odd"
+      <li appDate [date]="product.added" *ngFor="let product of productsList; let odd = odd"
         [ngClass]="{'odd-li': odd, 'last-li': productsList.length === 1 }">
         {{product.name | transformProduct: ','}}
         <button type="button" class="btn btn-danger" (click)="remove(product)">Usuń produkt</button>

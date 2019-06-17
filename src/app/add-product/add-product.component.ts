@@ -3,6 +3,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from '../model/product';
 import { FormGroup, FormArray, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { forEach } from '@angular/router/src/utils/collection';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-add-product',
@@ -13,7 +14,7 @@ export class AddProductComponent implements OnInit {
 
   addForm: FormGroup;
 
-  constructor(private productsService: ProductsService) {
+  constructor(private productsService: ProductsService, private authService: AuthService) {
   }
 
   ngOnInit() {
@@ -36,7 +37,7 @@ export class AddProductComponent implements OnInit {
     const productsList = new Array<Product>();
     const productsArr = this.addForm.get('productName').value as [string];
     productsArr.forEach(productName => {
-      const product = {name: productName, created: new Date().toLocaleString(), isPurchased: false};
+      const product = {name: productName, userId: this.authService.user.uid, added: new Date().toLocaleString(), isPurchased: false};
       productsList.push(product);
     });
     return productsList;
