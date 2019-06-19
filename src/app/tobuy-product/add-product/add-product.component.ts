@@ -1,9 +1,10 @@
-import { ProductsService } from './../services/products.service';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Product } from '../model/product';
-import { FormGroup, FormArray, FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
-import { forEach } from '@angular/router/src/utils/collection';
-import { AuthService } from '../auth/auth.service';
+
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormArray, FormControl, Validators } from '@angular/forms';
+import { ProductsService } from 'src/app/services/products.service';
+import { AuthService } from 'src/app/auth/auth.service';
+import { Product } from 'src/app/model/product';
+
 
 @Component({
   selector: 'app-add-product',
