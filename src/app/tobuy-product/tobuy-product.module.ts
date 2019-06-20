@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AddProductComponent, TobuyProductComponent } from './index';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { TobuyProductRoutingModule } from './tobuy-product.routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    TobuyProductRoutingModule,
   ]
 })
 export class TobuyProductModule {}

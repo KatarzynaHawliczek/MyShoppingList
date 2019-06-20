@@ -26,7 +26,6 @@ const config = {
   messagingSenderId: '1041837032162'
 };
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,12 +34,12 @@ const config = {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    AuthModule,
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
     TobuyProductModule,
     PurchasedProductModule,
     SharedModule,
-    AuthModule
   ],
   providers: [ProductsService, HttpService, AuthGuardService, AuthService],
   bootstrap: [AppComponent]

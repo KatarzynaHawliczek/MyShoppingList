@@ -11,7 +11,7 @@ import { AuthService } from '../auth/auth.service';
 export class HttpService {
   readonly apiKey = new HttpHeaders({
     'cache-control': 'no-cache',
-    'x-apikey': 'x-apikey',
+    'x-apikey': 'b220e3eea53851ad5b7ee73bcd077e18199ba',
     'content-type': 'application/json',
     'Access-Control-Allow-Origin': '*'
   });
